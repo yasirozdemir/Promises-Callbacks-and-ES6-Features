@@ -1,33 +1,22 @@
 const getImages = (keyQuery) => {
-  if (keyQuery !== "forest-carousel") {
-    fetch(`https://api.pexels.com/v1/search?query=${keyQuery}`, {
-      method: "get",
-      headers: {
-        Authorization:
-          "563492ad6f9170000100000196002ce464f24d7abd1cc59dfd9323a2",
-      },
+  fetch(`https://api.pexels.com/v1/search?query=${keyQuery}`, {
+    method: "get",
+    headers: {
+      Authorization: "563492ad6f9170000100000196002ce464f24d7abd1cc59dfd9323a2",
+    },
+  })
+    .then((rawImages) => rawImages.json())
+    .then((jsonImages) => {
+      let data = jsonImages.photos;
+      if (keyQuery !== "forest") {
+        renderImages(data);
+        urlMapping(data);
+        getIMGFromSpecificAuthor(data);
+      } else {
+        renderForestCarousel(data);
+      }
     })
-      .then((rawImages) => rawImages.json())
-      .then((jsonImages) => {
-        renderImages(jsonImages.photos);
-        urlMapping(jsonImages.photos);
-        getIMGFromSpecificAuthor(jsonImages.photos);
-      })
-      .catch((error) => alert(error.message));
-  } else {
-    fetch(`https://api.pexels.com/v1/search?query=forest`, {
-      method: "get",
-      headers: {
-        Authorization:
-          "563492ad6f9170000100000196002ce464f24d7abd1cc59dfd9323a2",
-      },
-    })
-      .then((rawImages) => rawImages.json())
-      .then((jsonImages) => {
-        renderForestCarousel(jsonImages.photos);
-      })
-      .catch((error) => alert(error.message));
-  }
+    .catch((error) => console.error(error.message));
 };
 
 const renderForestCarousel = (imageArray) => {
@@ -112,14 +101,21 @@ const hideImageCard = () => {
   }
 };
 
+let searchInput = document.getElementById("search-text");
 const searchNewImages = () => {
-  let searchInput = document.getElementById("search-text");
-  if (searchInput.value != "") getImages(`${searchInput.value}`);
-  else alert("Please insert a keyword to search!");
+  if (searchInput.value != "") {
+    getImages(`${searchInput.value.toLowerCase()}`);
+    searchInput.value = "";
+  } else alert("Please insert a keyword to search!");
 };
 
 window.onload = () => {
-  getImages("forest-carousel");
+  getImages("forest");
+  searchInput.addEventListener("keyup", (eventData) => {
+    if (eventData.key === "Enter") searchNewImages();
+    else return;
+  });
+  searchInput.value = "";
 };
 
 // ex 11

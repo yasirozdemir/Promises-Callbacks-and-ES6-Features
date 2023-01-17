@@ -88,20 +88,26 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white">About</h4>
+              <h4 class="text-white">About the page</h4>
               <p class="text-muted">
-                Add some information about the album below, the author, or any
-                other background context. Make it a few sentences long so folks
-                can pick up some informative tidbits. Then, link them off to
-                some social networking sites or contact information.
+                This page is coded to better understand the basics of promises,
+                callbacks and ES6+. Here you can display cat or dog images using
+                two built-in button. If you wan't more, you can use the search
+                bar. I used the API of Pexels, so all images can be found in
+                their data-base.
               </p>
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
-              <h4 class="text-white">Contact</h4>
+              <h4 class="text-white"><i class="bi bi-github"></i></h4>
               <ul class="list-unstyled">
-                <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                <li><a href="#" class="text-white">Like on Facebook</a></li>
-                <li><a href="#" class="text-white">Email me</a></li>
+                <li>
+                  <a
+                    href="https://github.com/yasirozdemir/Promises-Callbacks-and-ES6-Features"
+                    target="_blank"
+                    class="text-muted"
+                    >Github Repository</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -110,7 +116,7 @@
       <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container d-flex justify-content-between">
           <a href="#" class="navbar-brand d-flex align-items-center">
-            <svg
+            <!-- <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
@@ -128,8 +134,8 @@
                 d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
               />
               <circle cx="12" cy="13" r="4" />
-            </svg>
-            <span>MYO's Gallery</span>
+            </svg> -->
+            <span><i class="bi bi-images"></i> MYO's API Based Gallery</span>
           </a>
           <button
             class="navbar-toggler"
@@ -151,14 +157,6 @@
         <div class="container">
           <h1 class="jumbotron-heading">MYO's Gallery</h1>
           <p class="lead text-muted">powered by Bootstrap 4.6 & Pexels</p>
-          <p>
-            <button class="btn btn-primary mt-2" onclick="getImages('cat')">
-              Cat Images 😺
-            </button>
-            <button class="btn btn-secondary mt-2" onclick="getImages('dog')">
-              Dog Images 🐶
-            </button>
-          </p>
           <div class="input-group w-50 mx-auto mb-3">
             <input
               id="search-text"
@@ -179,6 +177,14 @@
               </button>
             </div>
           </div>
+          <p>
+            <button class="btn btn-primary" onclick="getImages('cat')">
+              Cat Images 😺
+            </button>
+            <button class="btn btn-secondary" onclick="getImages('dog')">
+              Dog Images 🐶
+            </button>
+          </p>
         </div>
       </section>
 
@@ -227,7 +233,8 @@
       </section>
 
       <section class="contianer-fluid">
-        <div class="row">
+        <!-- showing images using JS can be automated using JS -->
+        <div class="row mx-0">
           <div class="col-12 mx-auto">
             <div
               id="forest-images-carousel"
@@ -266,15 +273,27 @@
                 <div class="carousel-item">
                   <div class="row no-gutters mx-5">
                     <img class="col mx-1 w-100 forest-images" src="" />
-                    <img class="col mx-1 w-100 forest-images" src="" />
-                    <img class="col mx-1 w-100 forest-images" src="" />
+                    <img
+                      class="col d-none d-sm-block mx-1 w-100 forest-images"
+                      src=""
+                    />
+                    <img
+                      class="col d-none d-md-block mx-1 w-100 forest-images"
+                      src=""
+                    />
                   </div>
                 </div>
                 <div class="carousel-item">
                   <div class="row no-gutters mx-5">
                     <img class="col mx-1 w-100 forest-images" src="" />
-                    <img class="col mx-1 w-100 forest-images" src="" />
-                    <img class="col mx-1 w-100 forest-images" src="" />
+                    <img
+                      class="col d-none d-sm-block mx-1 w-100 forest-images"
+                      src=""
+                    />
+                    <img
+                      class="col d-none d-md-block mx-1 w-100 forest-images"
+                      src=""
+                    />
                   </div>
                 </div>
               </div>
