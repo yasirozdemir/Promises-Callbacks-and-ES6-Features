@@ -72,11 +72,10 @@ const renderImages = (imageArray) => {
               </div>
             </div>`;
   }
-  hideImageCard();
-  showImageCard();
+  showOrHideImageCard();
 };
 
-const showImageCard = () => {
+const showOrHideImageCard = () => {
   let showButtonsNode = document.querySelectorAll(
     ".btn-group button:nth-of-type(1)"
   );
@@ -87,9 +86,7 @@ const showImageCard = () => {
       imgToBeShowed.classList.add("d-block");
     });
   }
-};
 
-const hideImageCard = () => {
   let hideButtonsNode = document.querySelectorAll(
     ".btn-group button:nth-of-type(2)"
   );
