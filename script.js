@@ -111,6 +111,7 @@ const searchNewImages = () => {
 
 window.onload = () => {
   getImages("forest");
+
   searchInput.addEventListener("keyup", (eventData) => {
     if (eventData.key === "Enter") searchNewImages();
     else return;
