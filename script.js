@@ -73,6 +73,17 @@ const hideImageCard = () => {
   }
 };
 
+const searchNewImages = () => {
+  let searchInput = document.getElementById("search-text");
+  if (searchInput.value != "") getImages(`${searchInput.value}`);
+  else alert("Please insert a keyword to search!");
+};
+
+window.onload = () => {
+  hideImageCard();
+  getImages("forest-carousel");
+};
+
 // ex 11
 let desiredURLs = [];
 const getURLs = (data) => {
@@ -93,15 +104,4 @@ const getIMGFromSpecificAuthor = (dataArray) => {
   imagesFromPixabay = dataArray.filter(
     (item) => item.photographer === "Pixabay"
   );
-};
-
-const searchNewImages = () => {
-  let searchInput = document.getElementById("search-text");
-  if (searchInput.value != "") getImages(`${searchInput.value}`);
-  else alert("Please insert a keyword to search!");
-};
-
-window.onload = () => {
-  hideImageCard();
-  getImages("forest-carousel");
 };
