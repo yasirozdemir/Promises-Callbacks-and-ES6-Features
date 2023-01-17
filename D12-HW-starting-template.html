@@ -182,18 +182,20 @@
         </div>
       </section>
 
-      <!-- <section>
+      <section>
         <div
           class="modal fade"
-          id="exampleModal"
+          id="imageModal"
           tabindex="-1"
-          aria-labelledby="exampleModalLabel"
+          aria-labelledby="imageModalLabel"
           aria-hidden="true"
         >
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="imageModalLabel">
+                  Full Sized Image
+                </h5>
                 <button
                   type="button"
                   class="close"
@@ -203,7 +205,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">...</div>
+              <div class="modal-body"></div>
               <div class="modal-footer">
                 <button
                   type="button"
@@ -212,78 +214,98 @@
                 >
                   Close
                 </button>
-                <button type="button" class="btn btn-primary">
-                  Save changes
-                </button>
               </div>
             </div>
           </div>
         </div>
-      </section> -->
+      </section>
 
-      <div class="album py-2 bg-light">
+      <section class="album py-2 bg-light">
         <div class="container">
           <div class="row" id="images-goes-here"></div>
         </div>
-      </div>
-      <div class="contianer-fluid">
-        <div
-          id="forest-images-carousel"
-          class="carousel slide"
-          data-ride="carousel"
-        >
-          <ol class="carousel-indicators">
-            <li
-              data-target="#forest-images-carousel"
-              data-slide-to="0"
-              class="active"
-            ></li>
-            <li data-target="#forest-images-carousel" data-slide-to="1"></li>
-            <li data-target="#forest-images-carousel" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <img class="col-4 w-100 forest-images" src="" />
-                <img class="col-4 w-100 forest-images" src="" />
-                <img class="col-4 w-100 forest-images" src="" />
+      </section>
+
+      <section class="contianer-fluid">
+        <div class="row">
+          <div class="col-12 mx-auto">
+            <div
+              id="forest-images-carousel"
+              class="carousel slide"
+              data-ride="carousel"
+            >
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#forest-images-carousel"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#forest-images-carousel"
+                  data-slide-to="1"
+                ></li>
+                <li
+                  data-target="#forest-images-carousel"
+                  data-slide-to="2"
+                ></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row no-gutters mx-5">
+                    <img class="col mx-1 w-100 forest-images" src="" />
+                    <img
+                      class="col d-none d-sm-block mx-1 w-100 forest-images"
+                      src=""
+                    />
+                    <img
+                      class="col d-none d-md-block mx-1 w-100 forest-images"
+                      src=""
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row no-gutters mx-5">
+                    <img class="col mx-1 w-100 forest-images" src="" />
+                    <img class="col mx-1 w-100 forest-images" src="" />
+                    <img class="col mx-1 w-100 forest-images" src="" />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row no-gutters mx-5">
+                    <img class="col mx-1 w-100 forest-images" src="" />
+                    <img class="col mx-1 w-100 forest-images" src="" />
+                    <img class="col mx-1 w-100 forest-images" src="" />
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <img class="col-4 w-100 forest-images" src="" />
-                <img class="col-4 w-100 forest-images" src="" />
-                <img class="col-4 w-100 forest-images" src="" />
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <img class="col-4 w-100 forest-images" src="" />
-                <img class="col-4 w-100 forest-images" src="" />
-                <img class="col-4 w-100 forest-images" src="" />
-              </div>
+              <button
+                class="carousel-control-prev bg-dark"
+                type="button"
+                data-target="#forest-images-carousel"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next bg-dark"
+                type="button"
+                data-target="#forest-images-carousel"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Next</span>
+              </button>
             </div>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-target="#forest-images-carousel"
-            data-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-target="#forest-images-carousel"
-            data-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </button>
         </div>
-      </div>
+      </section>
     </main>
 
     <footer class="text-muted">

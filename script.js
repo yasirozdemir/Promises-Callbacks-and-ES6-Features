@@ -55,9 +55,11 @@ const renderImages = (imageArray) => {
                     <div class="btn-group mx-auto">
                       <button
                         type="button"
+                        data-toggle="modal"
+                        data-target="#imageModal"
                         class="btn btn-sm btn-outline-secondary"
                       >
-                        View
+                        View Full Size
                       </button>
                       <button
                         type="button"
@@ -72,29 +74,40 @@ const renderImages = (imageArray) => {
               </div>
             </div>`;
   }
-  showOrHideImageCard();
+  hideImageCard();
+  showImageModal();
 };
 
-const showOrHideImageCard = () => {
-  let showButtonsNode = document.querySelectorAll(
+const showImageModal = () => {
+  let viewFullSizesNode = document.querySelectorAll(
     ".btn-group button:nth-of-type(1)"
   );
-  for (showButton of showButtonsNode) {
-    showButton.addEventListener("click", (eventData) => {
+  let imageModal = document.querySelector("#imageModal .modal-body");
+  imageModal.innerHTML = "";
+
+  for (viewFullSize of viewFullSizesNode) {
+    viewFullSize.addEventListener("click", (eventData) => {
       let imgToBeShowed = eventData.target.closest(".card").firstElementChild;
-      imgToBeShowed.classList.remove("d-none");
-      imgToBeShowed.classList.add("d-block");
+      imageModal.innerHTML = `<img class="w-100" src="${imgToBeShowed.getAttribute(
+        "src"
+      )}" alt="">`;
     });
   }
+};
 
+const hideImageCard = () => {
   let hideButtonsNode = document.querySelectorAll(
     ".btn-group button:nth-of-type(2)"
   );
   for (hideButton of hideButtonsNode) {
     hideButton.addEventListener("click", (eventData) => {
       let imgToBeHided = eventData.target.closest(".card").firstElementChild;
-      imgToBeHided.classList.remove("d-block");
-      imgToBeHided.classList.add("d-none");
+      imgToBeHided.classList.toggle("d-none");
+      if (imgToBeHided.classList.contains("d-none")) {
+        eventData.target.innerHTML = "Show";
+      } else {
+        eventData.target.innerHTML = "Hide";
+      }
     });
   }
 };
